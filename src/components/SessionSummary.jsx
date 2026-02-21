@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SessionSummary({ stressLevel, location, onReturnHome }) {
+function SessionSummary({ stressLevel, location, onReturnHome, onAboutUs }) {
 
     // Calculate a "feeling now" based on a generic success of the session
     // In a real app, you might ask them again.
@@ -117,6 +117,13 @@ function SessionSummary({ stressLevel, location, onReturnHome }) {
                         >
                             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>home</span>
                             Return Home
+                        </button>
+                        <button
+                            onClick={onAboutUs}
+                            className="mt-2 text-sm text-text-muted hover:text-white transition-colors underline-offset-4 hover:underline flex items-center justify-center gap-1"
+                        >
+                            <span className="material-symbols-outlined text-[16px]">info</span>
+                            Why "The 900"?
                         </button>
                     </div>
 

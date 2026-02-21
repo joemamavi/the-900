@@ -5,6 +5,7 @@ import LocationSelection from './components/LocationSelection';
 import GuidedBreathing from './components/GuidedBreathing';
 import SessionSummary from './components/SessionSummary';
 import SuggestedActivity from './components/SuggestedActivity';
+import AboutUs from './components/AboutUs';
 import { fetchGeminiActivity } from './api/gemini';
 
 function App() {
@@ -46,6 +47,10 @@ function App() {
 
   const handleBreathingComplete = () => {
     setCurrentScreen('summary');
+  };
+
+  const handleGoToAboutUs = () => {
+    setCurrentScreen('aboutus');
   };
 
   const handleReturnHome = () => {
@@ -111,7 +116,11 @@ function App() {
           stressLevel={stressLevel}
           location={location}
           onReturnHome={handleReturnHome}
+          onAboutUs={handleGoToAboutUs}
         />
+      )}
+      {currentScreen === 'aboutus' && (
+        <AboutUs onReturnHome={handleReturnHome} />
       )}
     </div>
   );
